@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            border: 1px solid #ddd;
+            text-align: right;
+            
+        }
+        div {
+            width: 300px;
+            padding: 10px 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: salmon;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: rosybrown;
+        }
+
+        input {
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>0</h1>
+        <input type="text">
+        <button>+</button>
+    </div>
+    <script>
+        const calc = {
+            addBtn: document.querySelector('button'),
+            inputTxt: document.querySelector('input'),
+            h1: document.querySelector('h1'),
+            total: 0,
+            init() {
+                this.addBtn.addEventListener('click', this.add.bind(calc));
+            },
+            add() {
+                // this.h1.innerText = (this.inputTxt + this.h1);
+                //store new value
+                this.total += Number(this.inputTxt.value);
+                // = this.total = this.total + inputTxt.value;
+                //display updated value
+                this.h1.textContent = this.total;
+                //Clear input field
+                this.inputTxt.value = '';
+            }
+        };
+
+        calc.init();
+    </script>
+</body>
+</html>
